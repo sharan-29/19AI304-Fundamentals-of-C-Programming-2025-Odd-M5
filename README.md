@@ -39,7 +39,47 @@
 ### Step 12: 
   Stop
 # Program:
+```python
+#include <stdio.h>
+
+void swapv(int x, int y)
+{
+    int t;
+    t = x;
+    x = y;
+    y = t;
+    printf("\nInside swapv: x = %d, y = %d", x, y);
+}
+
+void swapr(int *x, int *y)
+{
+    int t;
+    t = *x;
+    *x = *y;
+    *y = t;
+    printf("\nInside swapr: x = %d, y = %d", *x, *y);
+}
+
+int main()
+{
+    int a = 10, b = 20;
+
+    printf("Before swapv: a = %d, b = %d", a, b);
+    swapv(a, b);
+    printf("\nAfter swapv: a = %d, b = %d", a, b);
+
+    printf("\n\nBefore swapr: a = %d, b = %d", a, b);
+    swapr(&a, &b);
+    printf("\nAfter swapr: a = %d, b = %d", a, b);
+
+    return 0;
+}
+```
 # Output:
+
+<img width="959" height="335" alt="image" src="https://github.com/user-attachments/assets/35335c6a-4018-4deb-a1b1-a089a18fada5" />
+
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +117,35 @@
 ### Step 10:
   Stop
 # Program:
+```python
+#include <stdio.h>
+
+int fibo(int x)
+{
+    if (x == 0 || x == 1)
+        return x;
+    else
+        return fibo(x - 1) + fibo(x - 2);
+}
+
+int main()
+{
+    int n, i;
+    scanf("%d", &n);
+
+    printf("Fibonacci series of %d terms:\n", n);
+
+    for (i = 0; i < n; i++)
+        printf("%d ", fibo(i));
+
+    return 0;
+}
+```
 # Output:
+
+<img width="955" height="288" alt="image" src="https://github.com/user-attachments/assets/0ed125cb-31f4-42ba-bb5c-ae40b3a9634c" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +187,37 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```python
+
+void printNum(int cur, int limit)
+{
+    if (cur > limit)
+        return;
+
+    printf("%d ", cur);
+    printNum(cur + 2, limit);
+}
+
+int main()
+{
+    int start, end;
+
+    printf("Enter start number: ");
+    scanf("%d", &start);
+
+    printf("Enter end number: ");
+    scanf("%d", &end);
+
+    printNum(start, end);
+
+    return 0;
+}
+```
 # Output:
+
+<img width="959" height="276" alt="image" src="https://github.com/user-attachments/assets/92f425f9-f778-4739-a3e4-617edfc23152" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +259,37 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```python
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *ptr, n, i, sum = 0;
+    scanf("%d", &n);
+
+    ptr = calloc(n, sizeof(int));
+
+    if (ptr == NULL)
+        return 0;
+
+    for (i = 0; i < n; i++)
+        scanf("%d", ptr + i);
+
+    for (i = 0; i < n; i++)
+        sum += *(ptr + i);
+
+    printf("Sum = %d", sum);
+
+    free(ptr);
+    return 0;
+}
+```
 # Output:
+
+<img width="959" height="394" alt="image" src="https://github.com/user-attachments/assets/29974a99-c770-48a9-a176-ef84a7054fd0" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +325,39 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```python
+#include <stdio.h>
+
+void displayArray(int *arr, int size);
+
+int main() {
+    int arr[5];
+    int i;
+
+    printf("Enter 5 integers:\n");
+
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    displayArray(arr, 5);
+
+    return 0;
+}
+
+void displayArray(int *arr, int size) {
+    int i;
+    printf("Array elements are:\n");
+
+    for (i = 0; i < size; i++) {
+        printf("%d ", *(arr + i));   
+    }
+}
+```
 # Output:
+
+<img width="929" height="324" alt="image" src="https://github.com/user-attachments/assets/2fb20b6a-ef68-4605-8eb2-861dc6308f0c" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
